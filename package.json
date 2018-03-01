@@ -1,5 +1,5 @@
 {
-  "name": "static-server",
+  "name": "st-server",
   "version": "1.0.0",
   "description": "一个简单的静态资源服务器",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zhangzhenwu/static-server.git"
+    "url": "git+https://github.com/zhangzhenwu/static-server.git"
   },
   "keywords": [
     "static",
@@ -17,7 +17,7 @@
   "bin": {
     "st-Server": "bin/www"
   },
-  "author": "miao.zhang",
+  "author": "zhangzhenwu",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zhangzhenwu/static-server/issues"
