@@ -1,0 +1,40 @@
+#! /usr/bin/env node
+
+let yargs = require('yargs');
+let argv = yargs.option('d', {
+    alias: 'root',
+    demand: 'false',
+    type: 'string',
+    default: process.cwd(),
+    description: '静态文件根目录'
+}).option('o', {
+    alias: 'host',
+    demand: 'false',
+    default: 'localhost',
+    type: 'string',
+    description: '请配置监听的主机'
+}).option('p', {
+    alias: 'port',
+    demand: 'false',
+    type: 'number',
+    default: 8800,
+    description: '请配置端口号'
+})
+    .usage('st-server [options]')
+    .example(
+    'st-server -d / -p 9900 -o localhost', '在本机的9900端口上监听客户端的请求'
+    ).help('h').argv;
+
+let path = require('path');
+let {
+ spawn
+} = require('child_process');
+
+let p1 = spawn('node', ['www.js', JSON.stringify(argv)], {
+ cwd: __dirname
+});
+p1.unref();
+process.exit(0);
+
+
+
